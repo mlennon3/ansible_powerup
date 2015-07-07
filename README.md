@@ -15,3 +15,9 @@ To run the vagrant machine the first time:
 ``` $ vagrant up```
 
 You should get a new mac osx virtual machine to play with
+
+
+Inside the vm, try to get it working with ansible:
+``` $ cd ansible_powerup ```
+``` $ ansible-playbook -i ansible/myHostsFile
+ansible/devstation.yml ```

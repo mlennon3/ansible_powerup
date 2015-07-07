@@ -1,31 +1,7 @@
----
-- hosts: 127.0.0.1
+- hosts: my_local_hosts
   connection: local
-  tasks:
-    - lineinfile: dest="~/.bash_profile" create=yes mode=644 line='export HOMEBREW_CASK_OPTS="--appdir=/Applications"'
-    - homebrew_tap: tap=caskroom/cask state=present
-    - name: Install homebrew packages
-      homebrew: name={{ item }} state=latest
-      with_items:
-        - brew-cask
+  vars:
+    myVariable: 123
 
-    - name: Install homebrew cask packages
-      homebrew_cask: name={{ item }} state=present
-      environment:
-        HOMEBREW_CASK_OPTS: --appdir=/Applications
-      with_items:
-#         - sublime-text
-#        - google-chrome
-#        - iterm2
-#
-#    - name: copy config files
-#      copy: src=files/{{ item }} dest=~/.{{ item }}
-#      with_items:
-#        - bash_profile
-#        - gitconfig
-#
-#    - name: set vim as git editor
-#      shell: 'git config --global core.editor /usr/bin/vim'
-#
-#    - name: make keyboard repeat fast
-#      shell: defaults write NSGlobalDomain KeyRepeat -int 0
+  roles:
+    - devstation
