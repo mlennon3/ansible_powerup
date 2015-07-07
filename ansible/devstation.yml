@@ -7,18 +7,7 @@
     - name: Install homebrew packages
       homebrew: name={{ item }} state=latest
       with_items:
-        - git
-        - wget
-        - vim
-        - ack
-        - tmux
-        - ctags
         - brew-cask
-        - reattach-to-user-namespace
-
-    - name: install java6 for webstorm
-      shell: brew cask install caskroom/homebrew-versions/java6
-      sudo_user: root
 
     - name: Install homebrew cask packages
       homebrew_cask: name={{ item }} state=present
@@ -27,63 +16,18 @@
       with_items:
         - vagrant
         - virtualbox
-        - iterm2
-        - alfred
-        - google-chrome
-        - firefox
-        - caffeine
-        - cinch
-        - screenhero
-        - webstorm
-        - java6
-        - hipchat
-        - flash-player
-
-    - name: Install vagrant plugins
-      shell: vagrant plugin install {{ item }}
-      with_items:
-        - vagrant-gatling-rsync
-
-    - name: Install vagrant gatling rsync
-      shell: vagrant plugin install
-
-    - name: Install RVM
-      shell: curl -sSL https://get.rvm.io | bash -s stable creates="~/.rvm"
-      args:
-        executable: /bin/bash
-
-    - name: Install bundler
-      shell: "gem install bundler"
-      sudo_user: root
-      args:
-        executable: /bin/bash
-
-    - name: install janus for vim
-      shell: curl -Lo- https://bit.ly/janus-bootstrap | bash creates=~/.vim.old/
-
-    - name: mkdir ~/.janus
-      shell: mkdir -p ~/.janus
-
-    - name: install vim plugins
-      shell: git clone https://github.com/{{ item.url }} chdir=~/.janus creates=~/.janus/{{ item.name  }}
-      with_items:
-        - { url: 'xolox/vim-misc', name: 'vim-misc' }
-        - { url: 'christoomey/vim-tmux-navigator', name: 'vim-tmux-navigator' }
-        - { url: 'xolox/vim-easytags', name: 'vim-easytags' }
-
-    - name: setup git completion
-      shell: curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash creates=~/.git-completion.bash
-
-    - name: copy config files
-      copy: src=files/{{ item }} dest=~/.{{ item }}
-      with_items:
-        - vimrc.after
-        - tmux.conf
-        - bash_profile
-        - gitconfig
-
-    - name: set vim as git editor
-      shell: 'git config --global core.editor /usr/bin/vim'
-
-    - name: make keyboard repeat fast
-      shell: defaults write NSGlobalDomain KeyRepeat -int 0
+#        - iterm2
+#        - alfred
+#        - google-chrome
+#
+#    - name: copy config files
+#      copy: src=files/{{ item }} dest=~/.{{ item }}
+#      with_items:
+#        - bash_profile
+#        - gitconfig
+#
+#    - name: set vim as git editor
+#      shell: 'git config --global core.editor /usr/bin/vim'
+#
+#    - name: make keyboard repeat fast
+#      shell: defaults write NSGlobalDomain KeyRepeat -int 0
