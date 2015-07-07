@@ -15,4 +15,3 @@ To run the vagrant machine the first time:
 ``` $ vagrant up```
 
 You should get a new mac osx virtual machine to play with
-

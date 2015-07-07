@@ -1,6 +1,6 @@
 [user]
-	name = mlennon3@gmail.com
-	email = mlennon3@gmail.com
+	name = 
+	email = 
 [core]
 	autocrlf = input
 	editor = /usr/bin/vim

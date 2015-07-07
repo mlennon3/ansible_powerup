@@ -14,11 +14,9 @@
       environment:
         HOMEBREW_CASK_OPTS: --appdir=/Applications
       with_items:
-        - vagrant
-        - virtualbox
-#        - iterm2
-#        - alfred
+#         - sublime-text
 #        - google-chrome
+#        - iterm2
 #
 #    - name: copy config files
 #      copy: src=files/{{ item }} dest=~/.{{ item }}

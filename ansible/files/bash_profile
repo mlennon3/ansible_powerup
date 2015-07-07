@@ -15,24 +15,8 @@ man() {
 
 
 alias  reload='source ~/.bash_profile'
-alias      ..='cd ..'
-alias     ...='cd ../..'
-alias    ....='cd ../../../'
-alias   .....='cd ../../../../'
-alias  ......='cd ../../../../../'
 alias 	    ~='cd ~'
 
 alias   gst='git status'
-alias   gco='git checkout'
-alias    gb='git branch'
-alias  glog='git log'
-alias  glol='git log --oneline'
-alias   gpr='git pull --rebase'
-alias gpull='git pull'
-alias ctags='/usr/local/bin/ctags'
-alias fvagrant='rm .vagrant/machines/default/virtualbox/synced_folders && vagrant' #annoying bug in vagrant see https://github.com/mitchellh/vagrant/issues/5199
 
-## Git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+
