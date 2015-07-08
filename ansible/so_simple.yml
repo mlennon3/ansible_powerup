@@ -1,0 +1,5 @@
+---
+- name: My first playbook 
+  hosts: all
+  tasks:
+    - debug: msg="Welcome to ansible. 'brew install cowsay' for even more fun!"
