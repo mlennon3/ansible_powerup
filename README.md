@@ -21,3 +21,6 @@ Inside the vm, try to get it working with ansible:
 ``` $ cd ansible_powerup ```
 ``` $ ansible-playbook -i ansible/myHostsFile
 ansible/devstation.yml ```
+
+if you get the box with the usb stick, put the box in
+~/.vagrant.d/boxes/
